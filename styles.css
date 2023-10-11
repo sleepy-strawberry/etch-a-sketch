@@ -1,11 +1,12 @@
 /* Body */
 
 body {
-  margin: 0;
+  margin: -1% 0 0 0;
   min-height: 100%;
   font-family: 'Delicious Handrawn', cursive;
   color: #fff;
   text-shadow: 2px 0px #941399;
+  padding-bottom: 1%;
 }
 
 /* Header */
@@ -58,7 +59,7 @@ section {
   padding: 10px 20px;
 }
 .menu {
-  background-color: pink;
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,7 +69,7 @@ section {
 .menu h2 {
   margin: 7% -5%;
 }
-button {
+.flex button {
   height: 50px;
   width: 47%;
   margin: 10px;
@@ -79,13 +80,16 @@ button {
   font-size: 18px;
   background-color: #f2b3eb;
 }
+.flex button:hover {
+  box-shadow: 1px 1px 5px #470e49;
+}
 button:first-of-type {
   margin-top: 0;
   background-color: #ffc0cb;
 }
 
 .empty-space {
-  background-color: pink;
+  background-color: transparent;
 }
 
 div.flex {
@@ -107,7 +111,7 @@ div.flex {
 }
 
 .board div {
-  width: 21px;
-  height: 21px;
+  width: 10px;
+  height: 10px;
   margin: 0;
 }

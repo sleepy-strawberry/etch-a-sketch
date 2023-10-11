@@ -5,8 +5,8 @@ const btnClearAll = document.querySelector('.clear-all')
 
 document.addEventListener('DOMContentLoaded', function () {
   const board = document.querySelector('.board')
-  const divWidth = 20 // Szerokość pojedynczego diva
-  const divHeight = 20 // Wysokość pojedynczego diva
+  const divWidth = 10 // Szerokość pojedynczego diva
+  const divHeight = 10 // Wysokość pojedynczego diva
   const boardWidth = board.offsetWidth
   const boardHeight = board.offsetHeight
   const divsInRow = Math.floor(boardWidth / divWidth)
@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   for (let i = 0; i < totalDivs; i++) {
     const div = document.createElement('div')
+    div.dataset.originalColor = '#F0F0F0'
     board.appendChild(div)
   }
 })
@@ -36,4 +37,12 @@ document.addEventListener('mouseover', function (e) {
   if (isMouseDown && e.target && e.target.tagName == 'DIV') {
     e.target.style.backgroundColor = 'pink' // Zmień kolor tła diva, nad którym jest kursor
   }
+})
+
+btnClearAll.addEventListener('click', () => {
+  var divs = document.querySelectorAll('.board div')
+
+  divs.forEach(function (div) {
+    div.style.backgroundColor = div.dataset.originalColor // Przywróć pierwotny kolor
+  })
 })
