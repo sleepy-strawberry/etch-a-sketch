@@ -2,6 +2,9 @@ const board = document.querySelector('.board')
 const btnRainbow = document.querySelector('.rainbow')
 const btnEraser = document.querySelector('.eraser')
 const btnClearAll = document.querySelector('.clear-all')
+const applyColorBtn = document.querySelector('.apply-color')
+
+let selectedColor = '#A424AE'
 
 document.addEventListener('DOMContentLoaded', function () {
   const board = document.querySelector('.board')
@@ -25,7 +28,11 @@ let isMouseDown = false
 document.addEventListener('mousedown', function (e) {
   if (e.button === 0 && e.target && e.target.tagName == 'DIV') {
     isMouseDown = true
-    e.target.style.backgroundColor = 'pink' // Zmień kolor tła pierwszego diva
+    if (selectedColor === 'rainbow') {
+      e.target.style.backgroundColor = getRandomRainbowColor()
+    } else {
+      e.target.style.backgroundColor = selectedColor
+    }
   }
 })
 
@@ -35,7 +42,11 @@ document.addEventListener('mouseup', function (e) {
 
 document.addEventListener('mouseover', function (e) {
   if (isMouseDown && e.target && e.target.tagName == 'DIV') {
-    e.target.style.backgroundColor = 'pink' // Zmień kolor tła diva, nad którym jest kursor
+    if (selectedColor === 'rainbow') {
+      e.target.style.backgroundColor = getRandomRainbowColor()
+    } else {
+      e.target.style.backgroundColor = selectedColor
+    }
   }
 })
 
@@ -46,3 +57,24 @@ btnClearAll.addEventListener('click', () => {
     div.style.backgroundColor = div.dataset.originalColor // Przywróć pierwotny kolor
   })
 })
+
+btnRainbow.addEventListener('click', () => {
+  selectedColor = 'rainbow'
+})
+
+btnEraser.addEventListener('click', () => {
+  selectedColor = '#F0F0F0' // Biały kolor jako gumka
+})
+
+applyColorBtn.addEventListener('click', () => {
+  selectedColor = colorInput.value
+})
+
+function getRandomRainbowColor() {
+  const letters = '0123456789ABCDEF'
+  let color = '#'
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)]
+  }
+  return color
+}

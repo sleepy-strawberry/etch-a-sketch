@@ -17,21 +17,33 @@
     <header>
       <h1>Draw please</h1>
     </header>
+    <img
+      id="catgif"
+      src="images/catgif.gif"
+      alt="gif z kotkiem machającym łapkami"
+    />
 
     <div class="flex">
       <section class="menu">
         <h2>Menu</h2>
-        <button class="color">Color mode</button>
+        <div class="color-picker">
+          <input type="color" id="colorInput" value="#A424AE" />
+          <!-- Dodaj element typu "color" z domyślnym kolorem -->
+          <button class="apply-color">Apply Color</button>
+        </div>
         <button class="rainbow">Rainbow mode</button>
         <button class="eraser">Eraser</button>
         <button class="clear-all">Clear all</button>
       </section>
 
-      <section class="board">
-        <div></div>
-      </section>
+      <section class="board"></section>
 
-      <section class="empty-space"></section>
+      <section class="empty-space">
+        <audio id="audio" controls autoplay loop>
+          <source src="audio/kawaiiSongs.mp3" type="audio/mpeg" />
+          Twoja przeglądarka nie obsługuje odtwarzaczy audio.
+        </audio>
+      </section>
     </div>
     <script src="script.js"></script>
   </body>

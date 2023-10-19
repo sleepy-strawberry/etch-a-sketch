@@ -21,6 +21,12 @@ header {
 h1 {
   margin: 0;
 }
+#catgif {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: -100;
+}
 .gradient-background {
   background: linear-gradient(83deg, #941399, #bf9bc0, #e722af);
   background-size: 180% 180%;
@@ -61,14 +67,26 @@ section {
 .menu {
   background-color: transparent;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   font-size: 35px;
 }
 .menu h2 {
-  margin: 7% -5%;
+  margin: 0;
+  padding: 0;
 }
+.color-picker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 99px;
+}
+
+#colorInput {
+  height: 50%;
+}
+
 .flex button {
   height: 50px;
   width: 47%;
@@ -83,13 +101,19 @@ section {
 .flex button:hover {
   box-shadow: 1px 1px 5px #470e49;
 }
-button:first-of-type {
-  margin-top: 0;
-  background-color: #ffc0cb;
+.rainbow {
+  background-image: url('images/rainbow.png');
 }
 
 .empty-space {
   background-color: transparent;
+}
+
+#audio {
+  position: fixed;
+  right: 2vw;
+  bottom: 5vh;
+  width: 20%;
 }
 
 div.flex {
@@ -114,4 +138,40 @@ div.flex {
   width: 10px;
   height: 10px;
   margin: 0;
+}
+
+@media (max-width: 910px) {
+  div.flex {
+    flex-direction: column;
+  }
+  .board {
+    position: absolute;
+    height: 80vh;
+    top: 90%;
+    left: 1%;
+    width: 96vw;
+  }
+  body {
+    height: 150vh;
+  }
+  .menu {
+    padding-top: 5vh;
+    height: 50vh;
+    position: relative;
+  }
+  h1 {
+    text-decoration: underline;
+  }
+  .menu button {
+    line-height: 8vh;
+  }
+  .color-picker button {
+    width: 90%;
+    padding: 0 30px;
+  }
+  #audio {
+    width: 25%;
+    background-color: #e722af;
+    padding: 10px;
+  }
 }
