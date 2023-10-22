@@ -140,6 +140,8 @@ div.flex {
   margin: 0;
 }
 
+/* media query for smaller screens */
+
 @media (max-width: 910px) {
   div.flex {
     flex-direction: column;

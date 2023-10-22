@@ -54,7 +54,7 @@ btnClearAll.addEventListener('click', () => {
   var divs = document.querySelectorAll('.board div')
 
   divs.forEach(function (div) {
-    div.style.backgroundColor = div.dataset.originalColor // Przywróć pierwotny kolor
+    div.style.backgroundColor = div.dataset.originalColor
   })
 })
 
@@ -63,7 +63,7 @@ btnRainbow.addEventListener('click', () => {
 })
 
 btnEraser.addEventListener('click', () => {
-  selectedColor = '#F0F0F0' // Biały kolor jako gumka
+  selectedColor = '#F0F0F0'
 })
 
 applyColorBtn.addEventListener('click', () => {
